@@ -10,7 +10,6 @@ const All = ({products}) => {
 
   for (let key of Object.keys(products)) {
     productList.push(...products[key]);
-    console.log(productList)
   }
 
   return (
