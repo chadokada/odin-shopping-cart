@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 //import Nav from './Nav';
-import cartFull from '../Images/Icons/shopping-cart.png';
+
 import App from './App';
 import All from './ProductPages/AllProducts';
-import Hats from './ProductPages/Hats'
+import ProductPage from './ProductPages/ProductPage';
 import Bags from './ProductPages/Bags';
 
 
@@ -21,7 +21,24 @@ const RouteSwitch = () => {
 
   let products = {
     hats : [
-      {name: 'Ribbed Beanie', price: 30.00,source: 'ribbed_beanie.jpg'}
+      {name: 'Ribbed Beanie', price: 30.00,source: 'ribbed_beanie.jpg'},
+      {name: 'Bowler', price: 35.00,source: 'bowler.jpg'},
+      {name: 'Ribbed Beanie', price: 30.00,source: 'ribbed_beanie.jpg'},
+      {name: 'Bowler', price: 35.00,source: 'bowler.jpg'},
+      {name: 'Ribbed Beanie', price: 30.00,source: 'ribbed_beanie.jpg'},
+      {name: 'Bowler', price: 35.00,source: 'bowler.jpg'},
+      {name: 'Ribbed Beanie', price: 30.00,source: 'ribbed_beanie.jpg'},
+      {name: 'Bowler', price: 35.00,source: 'bowler.jpg'}
+    ],
+    bags : [
+      {name: 'Tote Bag', price: 40.00,source: 'crochet_tote.jpg'},
+      {name: 'Grocery Bag', price: 30.00,source: 'grocery_bag.png'},
+      {name: 'Tote Bag', price: 40.00,source: 'crochet_tote.jpg'},
+      {name: 'Grocery Bag', price: 30.00,source: 'grocery_bag.png'},
+      {name: 'Tote Bag', price: 40.00,source: 'crochet_tote.jpg'},
+      {name: 'Grocery Bag', price: 30.00,source: 'grocery_bag.png'},
+      {name: 'Tote Bag', price: 40.00,source: 'crochet_tote.jpg'},
+      {name: 'Grocery Bag', price: 30.00,source: 'grocery_bag.png'},
     ]
   }
 
@@ -29,27 +46,40 @@ const RouteSwitch = () => {
   return (
     
     <BrowserRouter>
-      <div className="top-bar">
-        <div className='store-name'>Butter and Sugar</div>
 
-        <div className="shopping-cart full">
-          1
-          <img alt="cart-icon" src={cartFull} className="cart-icon full"/>
-        </div>
-      </div>
       <Routes>
         <Route path="/" exact element={<App />} />
-        <Route path="/all" element={<All />} />
-
         <Route 
-          path="/hats" 
+          path="/all" 
           element={
-            <Hats products={products.hats}/>
+            <All 
+              products={products}
+            />
           } 
         />
 
+        <Route 
+          path="/hats"
+          element={
+            <ProductPage 
+              productType='hats' 
+              products={products.hats} 
+            />
+          }
+        />
+        
+        <Route 
+          path="/bags"
+          element={
+            <ProductPage 
+              productType='Bags and Totes' 
+              products={products.bags} 
+            />
+          }
+        />
 
-        <Route path="/bags" element={<Bags />} />
+
+        
       </Routes>
     </BrowserRouter>
   )
