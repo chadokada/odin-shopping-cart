@@ -1,10 +1,9 @@
 import React from 'react';
 import '../../Styles/App.css';
 import Nav from '../Nav';
-import TopBar from '../TopBar';
 import ProductCard from '../ProductCard';
 
-const All = ({products}) => {
+const All = ({products, handleAddToCart}) => {
 
   let productList = []
 
@@ -14,32 +13,25 @@ const All = ({products}) => {
 
   return (
     <div className='shop-container'>
-    <TopBar />
-    <div className='shop-content'>
-      <Nav shopName={`All Products`} />
-      <div className='products-container'>
-
-        {productList.map((product) => {
-          return(
-            <ProductCard product={product}/>
-          )
-        })}
-
-      </div>
-    </div>
-
-  </div>
-    /*
-    <div className='shop-container'>
-      <TopBar />
+  
       <div className='shop-content'>
-        <Nav shopName="All Products"/>
+        <Nav shopName={`All Products`} />
         <div className='products-container'>
-          All Products
+
+          {productList.map((product) => {
+            return(
+              <ProductCard 
+                key={product.name}
+                product={product}
+                handleAddToCart={handleAddToCart}
+              />
+            )
+          })}
+
         </div>
       </div>
+
     </div>
-    */
   )
 }
 

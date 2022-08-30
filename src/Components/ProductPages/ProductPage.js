@@ -1,23 +1,27 @@
 import React from 'react';
 import '../../Styles/App.css';
-import TopBar from '../TopBar';
 import Nav from '../Nav';
 import ProductCard from '../ProductCard';
 
-const ProductPage = ({productType, products}) => {
+const ProductPage = ({title, products, handleAddToCart}) => {
   // PC = proper case
-  const productTypePC = productType[0].toUpperCase() + productType.slice(1);
 
   return (
     <div className='shop-container'>
+      {/*
       <TopBar />
+      */}
       <div className='shop-content'>
-        <Nav shopName={productTypePC} />
+        <Nav shopName={title} />
         <div className='products-container'>
 
           {products.map((product) => {
             return(
-              <ProductCard product={product}/>
+              <ProductCard
+                key={product.name} 
+                product={product}
+                handleAddToCart={handleAddToCart}
+              />
             )
           })}
 
