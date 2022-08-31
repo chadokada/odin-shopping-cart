@@ -8,16 +8,19 @@ import CartBar from './CartBar';
 
 const RouteSwitch = () => {
 
-  let [cart, setCart] = useState([])
+  let [cart, setCart] = useState({
+    hats: {},
+    bags: {}
+  })
 
   /*
     cart = { 
-      'bowler hat': 2,
-      'tote bag': 1
+      'hats': {'Bowler': 1},
+      'bags': {'Tote Bag': 1}
     }
   */
-
-  let products = {
+    
+  let products = { //Put this in a separate file 
     hats : [
       {name: 'Ribbed Beanie', price: 30.00, source: 'ribbed_beanie.jpg', type:'hats'},
       {name: 'Bowler', price: 35.00,source: 'bowler.jpg', type:'hats'},
@@ -34,10 +37,19 @@ const RouteSwitch = () => {
     const product = products[productType].filter(product => {
       return product.name === productName
     })[0]; //To strip containing array
-
-    let newCart = [...cart];
-    newCart.push(product);
+    
+    
+    let newCart = {...cart};
+    
+    if (newCart[productType][productName] === undefined) {
+      newCart[productType][productName] = 1
+    } else {
+      newCart[productType][productName] += 1
+    }
+   
     setCart(newCart);
+
+    console.table(cart)
   }
 
 

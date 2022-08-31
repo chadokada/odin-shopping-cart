@@ -12,8 +12,13 @@ const Cart = ({showCart, toggleCart}) => {
 
   return (
     <div className={`cart-drawer${cartOpen}`}>
-      THIS IS CARTA
-      <button onClick={toggleCart}>Close Cart</button>
+      
+
+      
+      <div className='cart-container'>
+        <button onClick={toggleCart}>Close Cart</button>
+      </div>
+      
     </div>
   )
 }
