@@ -197,3 +197,8 @@ a{
   right: 0;
   position: absolute;
 }
+
+.product-img-cart{
+  max-height: 150px;
+  max-width: 150px;
+}

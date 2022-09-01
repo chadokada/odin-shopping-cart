@@ -5,13 +5,14 @@ import App from './App';
 import All from './ProductPages/AllProducts';
 import ProductPage from './ProductPages/ProductPage';
 import CartBar from './CartBar';
+import {products} from './ProductListing';
 
 const RouteSwitch = () => {
 
-  let [cart, setCart] = useState({
+  let [cart, setCart] = useState({}/*{
     hats: {},
     bags: {}
-  })
+  }*/)
 
   /*
     cart = { 
@@ -19,7 +20,8 @@ const RouteSwitch = () => {
       'bags': {'Tote Bag': 1}
     }
   */
-    
+   
+  /*
   let products = { //Put this in a separate file 
     hats : [
       {name: 'Ribbed Beanie', price: 30.00, source: 'ribbed_beanie.jpg', type:'hats'},
@@ -30,6 +32,7 @@ const RouteSwitch = () => {
       {name: 'Grocery Bag', price: 30.00,source: 'grocery_bag.png', type:'bags'},
     ]
   }
+  */
 
   const handleAddToCart = (event) => {
     const productType = event.target.parentNode.getAttribute('type');
@@ -41,15 +44,16 @@ const RouteSwitch = () => {
     
     let newCart = {...cart};
     
-    if (newCart[productType][productName] === undefined) {
-      newCart[productType][productName] = 1
+    
+    if (newCart[productName] === undefined) {
+      newCart[productName] = {...product, quantity: 1}
     } else {
-      newCart[productType][productName] += 1
+      newCart[productName].quantity += 1
     }
    
     setCart(newCart);
 
-    console.table(cart)
+    //console.table(cart)
   }
 
 

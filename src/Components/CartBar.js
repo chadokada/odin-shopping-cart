@@ -5,8 +5,18 @@ import Cart from './Cart';
 
 const CartBar = ({cart}) => {
 
+  const getCartSize = () => {
+    let cartSize = 0;
+    for (const item in cart) {
+      cartSize += cart[item].quantity;
+    }
+    return cartSize;
+  }  
+  
+  const cartSize = getCartSize();
+
   let cartStatus = ''
-  if (cart.length > 0) {
+  if (cartSize > 0) {
     cartStatus = ' full'
   };
 
@@ -25,11 +35,11 @@ const CartBar = ({cart}) => {
     <div className='store-name'>Butter and Sugar</div>
 
     <div className={`shopping-cart${cartStatus}`} onClick={toggleCart}>
-      {cart.length}
+      {cartSize}
       <img alt="cart-icon" src={shoppingCart} className={`cart-icon${cartStatus}`}/>
     </div>
 
-    <Cart showCart={showCart} toggleCart={toggleCart}/>
+    <Cart cart={cart} showCart={showCart} toggleCart={toggleCart}/>
 
   </div>
   )
