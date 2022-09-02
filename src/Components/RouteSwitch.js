@@ -35,6 +35,7 @@ const RouteSwitch = () => {
   */
 
   const handleAddToCart = (event) => {
+    console.log('yo')
     const productType = event.target.parentNode.getAttribute('type');
     const productName = event.target.parentNode.getAttribute('name');
     const product = products[productType].filter(product => {
