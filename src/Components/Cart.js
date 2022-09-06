@@ -1,102 +1,81 @@
 import React from 'react';
+import CartItem from  './CartItem';
 import '../Styles/App.css';
 
-const Cart = ({cart, showCart, toggleCart}) => {
+const Cart = (
+  {
+    cart, 
+    showCart, 
+    toggleCart, 
+    decrementItem, 
+    incrementItem,
+    handleQuantityInput
+  }) => {
 
   let cartOpen = '';
   if (showCart === true){
     cartOpen = ' open';
   }
 
-  const cartArray = () => {
-    const arr = []
-    for(const item in cart){
-      const imageSrc = cart[item].source;
-      const price = cart[item].price.toFixed(2);
-      const quantity = cart[item].quantity;
+  const getCartTotal = () => {
+    let cartTotal = 0;
 
-      arr.push(
-        <div className='cart-item'>
-          <div className='cart-item-img-container'>
-            <img
-              className='cart-item-img'
-              alt={item}
-              src={require(`../Images/Products/${imageSrc}`)}
-            />
-          </div>
-          <div className='cart-item-side'>
-            <div className='cart-item-info'>
-              <div className='cart-item-name'>{item}</div>
-              <div className='cart-item-price'>{`$${price}`}</div>
-            </div>
+    //console.table(cart)
 
-            <div className='cart-item-quantity-container'>
-              <button>-</button>
-              <input 
-                type='number' 
-                className='cart-item-quantity-input' 
-                value={quantity}
-              >
-              </input>
-              <button>+</button>
-            </div>
-          </div>
-        </div>
-
-
-      )
+    for(const product in cart){
+      const price = cart[product].price.toFixed(2);
+      const quantity = cart[product].quantity;
+      cartTotal = cartTotal + ( price * quantity );
     }
-    return arr;
+    return cartTotal.toFixed(2);
   }
 
 
+  const renderCartItems = () => {
+    if (Object.keys(cart).length > 0) {
+      Object.keys(cart).map((key) => {
+        return(
+          <CartItem 
+            key={key}
+            product={cart[key]}
+            decrementItem={decrementItem}
+            incrementItem={incrementItem}
+            handleQuantityInput={handleQuantityInput}
+          />
+        )
+      })
+    } else {
+      return(<div>No items yet...</div>)
+    }
+  }
 
   return (
     <div className={`cart-drawer${cartOpen}`}>
       
+      <div className='cart-overlay' onClick={toggleCart}></div>
+
       <div className='cart-container'>
-        <button onClick={toggleCart}>Close Cart</button>
-
-        <div className='cart-items-container'>
-          {cartArray().map((div) => {
-            return(div)
-          })}
-          
-          {/* 
-          <div className='cart-item'>
-            <img
-              className='cart-item-img'
-              alt={'Ribbed Beanie'}
-              src={require(`../Images/Products/ribbed_beanie.jpg`)}
-            />
-            <div className='cart-item-side'>
-              <div className='cart-item-info'>
-                <div className='cart-item-name'>Ribbed Beanie</div>
-                <div className='cart-item-price'>$30.00</div>
-              </div>
-
-              <div className='cart-item-quantity-container'>
-                <button>-</button>
-                <input 
-                  type='number'
-                  className='cart-item-quantity-input'
-                  value='10'
-                >
-                </input>
-                <button>+</button>
-              </div>
-            </div>
-          </div>
-          */}
-
-
+        <div className='cart-header'>
+          <h2>Your Shopping Cart</h2>
+          <i className="fa-solid fa-x" onClick={toggleCart}></i>
         </div>
-        
-        {/* 
-          {cartArray().map((div) => {
-            return(div)
-          })}
-        */}
+        <div className='cart-items-container'>
+          {
+            Object.keys(cart).map((key) => {
+              return(
+                <CartItem 
+                  key={key}
+                  product={cart[key]}
+                  decrementItem={decrementItem}
+                  incrementItem={incrementItem}
+                  handleQuantityInput={handleQuantityInput}
+                />
+              )
+            })
+          }
+        </div>
+        <div className='cart-total'>Total: ${getCartTotal()}</div>
+        <button className='checkout'>Checkout</button>
       </div>
       
     </div>

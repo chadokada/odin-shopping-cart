@@ -3,7 +3,7 @@ import '../Styles/App.css';
 import shoppingCart from '../Images/Icons/shopping-cart.png';
 import Cart from './Cart';
 
-const CartBar = ({cart}) => {
+const CartBar = ({cart, decrementItem, incrementItem, handleQuantityInput}) => {
 
   const getCartSize = () => {
     let cartSize = 0;
@@ -39,7 +39,14 @@ const CartBar = ({cart}) => {
       <img alt="cart-icon" src={shoppingCart} className={`cart-icon${cartStatus}`}/>
     </div>
 
-    <Cart cart={cart} showCart={showCart} toggleCart={toggleCart}/>
+    <Cart 
+      cart={cart} 
+      showCart={showCart} 
+      toggleCart={toggleCart}
+      decrementItem={decrementItem}
+      incrementItem={incrementItem}
+      handleQuantityInput={handleQuantityInput}
+    />
 
   </div>
   )

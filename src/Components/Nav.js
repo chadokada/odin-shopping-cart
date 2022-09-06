@@ -10,13 +10,13 @@ const Nav = ({shopName}) => {
       */}
       <h2>{shopName}</h2>
       <ul>
-          <Link to="/all">
+          <Link to="/products/all">
             <li>All Products</li>
           </Link>
-          <Link to="/hats">
+          <Link to="/products/hats">
             <li>Hats</li>
           </Link>
-          <Link to="/bags">
+          <Link to="/products/bags">
             <li>Bags and Totes</li>
           </Link>
 

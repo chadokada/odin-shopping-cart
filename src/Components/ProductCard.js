@@ -1,8 +1,6 @@
 import React from 'react';
 
-
 const ProductCard = ({product, handleAddToCart}) => {
-  
   return(
     <div 
       className='product-container'
