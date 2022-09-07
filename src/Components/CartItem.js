@@ -33,7 +33,7 @@ const CartItem = ({product, decrementItem, incrementItem, handleQuantityInput}) 
             type='number' 
             className='cart-item-quantity-input' 
             value={quantity}
-            onChange={handleQuantityInput}
+            onInput={handleQuantityInput}
           >
           </input>
           <button onClick={incrementItem}>+</button>

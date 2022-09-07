@@ -4,17 +4,12 @@ import Nav from '../Nav';
 import ProductCard from '../ProductCard';
 
 const ProductPage = ({title, products, handleAddToCart}) => {
-  // PC = proper case
 
   return (
     <div className='shop-container'>
-      {/*
-      <TopBar />
-      */}
       <div className='shop-content'>
         <Nav shopName={title} />
         <div className='products-container'>
-
           {products.map((product) => {
             return(
               <ProductCard
@@ -24,10 +19,8 @@ const ProductPage = ({title, products, handleAddToCart}) => {
               />
             )
           })}
-
         </div>
       </div>
-
     </div>
   )
 }
