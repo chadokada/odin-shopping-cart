@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 //import Nav from './Nav';
 import App from './App';
 import All from './ProductPages/AllProducts';
@@ -10,7 +10,6 @@ import {products} from './ProductListing';
 const RouteSwitch = () => {
 
   let [cart, setCart] = useState({})
-
 
   const handleAddToCart = (event) => {
     const productType = event.target.parentNode.getAttribute('type');
@@ -48,7 +47,7 @@ const RouteSwitch = () => {
   }
 
   const handleQuantityInput = (event) => {
-    const newQuantity = event.target.value;
+    const newQuantity = parseInt(event.target.value);
     const itemName = event.target.closest('.cart-item').getAttribute('name')
     let newCart = {...cart};
     newCart[itemName].quantity = newQuantity;
@@ -59,67 +58,60 @@ const RouteSwitch = () => {
     setCart(newCart);
   }
 
+  const handleCheckOut = () => {
+    let newCart = {};
+    setCart(newCart)
+  }
+
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" exact element={<App />} />
-      
         <Route 
-          path="/products/all" 
-          element={
+          path="/products"
+          element={(
             <>
               <CartBar 
                 cart={cart} 
                 decrementItem={decrementItem}
                 incrementItem={incrementItem}
                 handleQuantityInput={handleQuantityInput}
+                handleCheckOut={handleCheckOut}
               />
+              <Outlet />
+            </>
+          )}
+        >
+          <Route 
+            path="all" 
+            element={
               <All 
                 products={products}
                 handleAddToCart={handleAddToCart}
               />
-            </>
-          } 
-        />
-
-        <Route 
-          path="/products/hats"
-          element={
-            <>
-              <CartBar 
-                cart={cart} 
-                decrementItem={decrementItem}
-                incrementItem={incrementItem}
-                handleQuantityInput={handleQuantityInput}
-              />
+            } 
+          />
+          <Route 
+            path="hats"
+            element={
               <ProductPage 
                 title='Hats' 
                 products={products.hats} 
                 handleAddToCart={handleAddToCart}
               />
-            </>
-          }
-        />
-        
-        <Route 
-          path="/products/bags"
-          element={
-            <>
-              <CartBar 
-                cart={cart} 
-                decrementItem={decrementItem}
-                incrementItem={incrementItem}
-                handleQuantityInput={handleQuantityInput}
-              />
+            }
+          />
+          <Route 
+            path="bags"
+            element={
               <ProductPage 
                 title='Bags and Totes' 
                 products={products.bags}
                 handleAddToCart={handleAddToCart}
               />
-            </>
-          }
-        />
-        
+            }
+          />
+        </Route>
       </Routes>
     </BrowserRouter>
   )
