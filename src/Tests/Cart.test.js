@@ -1,16 +1,16 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
+import renderer from 'react-test-renderer'
 import userEvent from '@testing-library/user-event';
 import Cart from '../Components/Cart';
 
 it('should render nothing if cart is empty', () => {
   const cart = {}
-  const { renderedCart } = render(<Cart cart={cart}/>)
+  const renderedCart = renderer.create(<Cart cart={cart}/>).toJSON();
   expect(renderedCart).toMatchSnapshot()
 });
 
 it('should render one item in cart', () => {
-  const onInputMock = jest.fn();
   const cart = {
     'Citrus Bag' : {
       name: 'Citrus Bag', 
@@ -20,9 +20,24 @@ it('should render one item in cart', () => {
       quantity: 1
     }
   }
-  const { renderedCart } = render(
-    <Cart cart={cart} handleQuantityInput={onInputMock}/>
-    )
+  const showCartMock = jest.fn();
+  const toggleCartMock = jest.fn();
+  const decrementMock = jest.fn();
+  const incrementMock = jest.fn();
+  const onInputMock = jest.fn();
+  const checkOutMock = jest.fn();
+
+  const renderedCart = renderer.create(
+    <Cart 
+      cart={cart}
+      showCart={showCartMock}
+      toggleCart={toggleCartMock}
+      decrementItem={decrementMock}
+      incrementItem={incrementMock} 
+      handleQuantityInput={onInputMock}
+      handleCheckOut={checkOutMock}
+    />
+  ).toJSON();
 
   expect(renderedCart).toMatchSnapshot()
 });
@@ -45,9 +60,9 @@ it('should render two items in cart', () => {
       quantity: 3
     }
   }
-  const { renderedCart } = render(
+  const renderedCart = renderer.create(
     <Cart cart={cart} handleQuantityInput={onInputMock}/>
-    )
+  ).toJSON();
     
   expect(renderedCart).toMatchSnapshot()
 });

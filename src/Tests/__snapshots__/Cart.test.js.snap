@@ -1,7 +1,299 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render nothing if cart is empty 1`] = `undefined`;
+exports[`should render nothing if cart is empty 1`] = `
+<div
+  className="cart-drawer"
+>
+  <div
+    className="cart-overlay"
+  />
+  <div
+    className="cart-container"
+  >
+    <div
+      className="cart-header"
+    >
+      <h2>
+        Your Shopping Cart
+      </h2>
+      <i
+        className="fa-solid fa-x"
+      />
+    </div>
+    <div
+      className="cart-items-container"
+    >
+      <div>
+        No items yet...
+      </div>
+    </div>
+    <div
+      className="cart-total"
+    >
+      Total: $
+      0.00
+    </div>
+    <button
+      className="checkout"
+    >
+      Checkout
+    </button>
+  </div>
+</div>
+`;
 
-exports[`should render one item in cart 1`] = `undefined`;
+exports[`should render one item in cart 1`] = `
+<div
+  className="cart-drawer"
+>
+  <div
+    className="cart-overlay"
+    onClick={[MockFunction]}
+  />
+  <div
+    className="cart-container"
+  >
+    <div
+      className="cart-header"
+    >
+      <h2>
+        Your Shopping Cart
+      </h2>
+      <i
+        className="fa-solid fa-x"
+        onClick={[MockFunction]}
+      />
+    </div>
+    <div
+      className="cart-items-container"
+    >
+      <div
+        className="cart-item"
+        name="Citrus Bag"
+        type="bags"
+      >
+        <div
+          className="cart-item-img-container"
+        >
+          <img
+            alt={
+              Object {
+                "name": "Citrus Bag",
+                "price": 45,
+                "quantity": 1,
+                "source": "citrus_bag.png",
+                "type": "bags",
+              }
+            }
+            className="cart-item-img"
+            src="citrus_bag.png"
+          />
+        </div>
+        <div
+          className="cart-item-side"
+        >
+          <div
+            className="cart-item-info"
+          >
+            <div
+              className="cart-item-name"
+            >
+              Citrus Bag
+            </div>
+            <div
+              className="cart-item-price"
+            >
+              $45.00
+            </div>
+          </div>
+          <div
+            className="cart-item-quantity-container"
+          >
+            <button
+              onClick={[MockFunction]}
+            >
+              -
+            </button>
+            <input
+              className="cart-item-quantity-input"
+              onInput={[MockFunction]}
+              type="number"
+              value={1}
+            />
+            <button
+              onClick={[MockFunction]}
+            >
+              +
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="cart-total"
+    >
+      Total: $
+      45.00
+    </div>
+    <button
+      className="checkout"
+      onClick={[MockFunction]}
+    >
+      Checkout
+    </button>
+  </div>
+</div>
+`;
 
-exports[`should render two items in cart 1`] = `undefined`;
+exports[`should render two items in cart 1`] = `
+<div
+  className="cart-drawer"
+>
+  <div
+    className="cart-overlay"
+  />
+  <div
+    className="cart-container"
+  >
+    <div
+      className="cart-header"
+    >
+      <h2>
+        Your Shopping Cart
+      </h2>
+      <i
+        className="fa-solid fa-x"
+      />
+    </div>
+    <div
+      className="cart-items-container"
+    >
+      <div
+        className="cart-item"
+        name="Citrus Bag"
+        type="bags"
+      >
+        <div
+          className="cart-item-img-container"
+        >
+          <img
+            alt={
+              Object {
+                "name": "Citrus Bag",
+                "price": 45,
+                "quantity": 1,
+                "source": "citrus_bag.png",
+                "type": "bags",
+              }
+            }
+            className="cart-item-img"
+            src="citrus_bag.png"
+          />
+        </div>
+        <div
+          className="cart-item-side"
+        >
+          <div
+            className="cart-item-info"
+          >
+            <div
+              className="cart-item-name"
+            >
+              Citrus Bag
+            </div>
+            <div
+              className="cart-item-price"
+            >
+              $45.00
+            </div>
+          </div>
+          <div
+            className="cart-item-quantity-container"
+          >
+            <button>
+              -
+            </button>
+            <input
+              className="cart-item-quantity-input"
+              onInput={[MockFunction]}
+              type="number"
+              value={1}
+            />
+            <button>
+              +
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className="cart-item"
+        name="Bowler"
+        type="hats"
+      >
+        <div
+          className="cart-item-img-container"
+        >
+          <img
+            alt={
+              Object {
+                "name": "Bowler",
+                "price": 25,
+                "quantity": 3,
+                "source": "bowler.jpg",
+                "type": "hats",
+              }
+            }
+            className="cart-item-img"
+            src="bowler.jpg"
+          />
+        </div>
+        <div
+          className="cart-item-side"
+        >
+          <div
+            className="cart-item-info"
+          >
+            <div
+              className="cart-item-name"
+            >
+              Bowler
+            </div>
+            <div
+              className="cart-item-price"
+            >
+              $25.00
+            </div>
+          </div>
+          <div
+            className="cart-item-quantity-container"
+          >
+            <button>
+              -
+            </button>
+            <input
+              className="cart-item-quantity-input"
+              onInput={[MockFunction]}
+              type="number"
+              value={3}
+            />
+            <button>
+              +
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="cart-total"
+    >
+      Total: $
+      120.00
+    </div>
+    <button
+      className="checkout"
+    >
+      Checkout
+    </button>
+  </div>
+</div>
+`;
