@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render nothing if cart is empty 1`] = `undefined`;
+
+exports[`should render one item in cart 1`] = `undefined`;
+
+exports[`should render two items in cart 1`] = `undefined`;
