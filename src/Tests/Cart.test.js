@@ -6,8 +6,8 @@ import Cart from '../Components/Cart';
 
 it('should render nothing if cart is empty', () => {
   const cart = {}
-  const renderedCart = renderer.create(<Cart cart={cart}/>).toJSON();
-  expect(renderedCart).toMatchSnapshot()
+  const { container } = render(<Cart cart={cart}/>);
+  expect(container).toMatchSnapshot()
 });
 
 it('should render one item in cart', () => {
@@ -27,7 +27,7 @@ it('should render one item in cart', () => {
   const onInputMock = jest.fn();
   const checkOutMock = jest.fn();
 
-  const renderedCart = renderer.create(
+  const { container } = render(
     <Cart 
       cart={cart}
       showCart={showCartMock}
@@ -37,9 +37,9 @@ it('should render one item in cart', () => {
       handleQuantityInput={onInputMock}
       handleCheckOut={checkOutMock}
     />
-  ).toJSON();
+  );
 
-  expect(renderedCart).toMatchSnapshot()
+  expect(container).toMatchSnapshot()
 });
 
 it('should render two items in cart', () => {
@@ -60,11 +60,11 @@ it('should render two items in cart', () => {
       quantity: 3
     }
   }
-  const renderedCart = renderer.create(
+  const { container } = render(
     <Cart cart={cart} handleQuantityInput={onInputMock}/>
-  ).toJSON();
+  );
     
-  expect(renderedCart).toMatchSnapshot()
+  expect(container).toMatchSnapshot()
 });
 
 it('should show correct cart total if one item with quantity of 1 in cart', () => {

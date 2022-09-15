@@ -30,4 +30,12 @@ describe("Test ProductCard", () => {
     expect(onClickMock).toHaveBeenCalledTimes(1);
   })
 
+
+  it("productcard snapshot", () => {
+    const {container} = render(<ProductCard product={testProduct} handleAddToCart={onClickMock} />);
+
+    expect(container).toMatchSnapshot();
+  });
+
+
 })
