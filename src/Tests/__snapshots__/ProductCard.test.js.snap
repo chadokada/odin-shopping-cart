@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test ProductCard productcard snapshot 1`] = `
+<div>
+  <div
+    class="product-container"
+    name="Bowler Hat"
+    type="Hat"
+  >
+    <div
+      class="product-img-container"
+    >
+      <img
+        alt="Bowler Hat"
+        class="product-img"
+        src="bowler.jpg"
+      />
+    </div>
+    <div
+      class="product-info"
+    >
+      <div
+        class="product-name"
+      >
+        Bowler Hat
+      </div>
+      <div
+        class="price"
+      >
+        $15.00
+      </div>
+    </div>
+    <button
+      class="add-to-cart-btn"
+    >
+      Add To Cart
+    </button>
+  </div>
+</div>
+`;

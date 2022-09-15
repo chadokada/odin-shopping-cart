@@ -1,0 +1,301 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test cart with four items should show no items in cart 1`] = `
+<div>
+  <div
+    class="top-bar"
+  >
+    <div
+      class="store-name"
+    >
+      Butter and Sugar
+    </div>
+    <div
+      class="shopping-cart full"
+      data-testid="cart-button"
+    >
+      <div
+        class="cart-size"
+        data-testid="cart-size"
+      >
+        4
+      </div>
+      <img
+        alt="cart-icon"
+        class="cart-icon full"
+        src="shopping-cart.png"
+      />
+    </div>
+    <div
+      class="cart-drawer"
+    >
+      <div
+        class="cart-overlay"
+      />
+      <div
+        class="cart-container"
+      >
+        <div
+          class="cart-header"
+        >
+          <h2>
+            Your Shopping Cart
+          </h2>
+          <i
+            class="fa-solid fa-x"
+          />
+        </div>
+        <div
+          class="cart-items-container"
+        >
+          <div
+            class="cart-item"
+            name="Citrus Bag"
+            type="bags"
+          >
+            <div
+              class="cart-item-img-container"
+            >
+              <img
+                alt="[object Object]"
+                class="cart-item-img"
+                src="citrus_bag.png"
+              />
+            </div>
+            <div
+              class="cart-item-side"
+            >
+              <div
+                class="cart-item-info"
+              >
+                <div
+                  class="cart-item-name"
+                >
+                  Citrus Bag
+                </div>
+                <div
+                  class="cart-item-price"
+                >
+                  $45.00
+                </div>
+              </div>
+              <div
+                class="cart-item-quantity-container"
+              >
+                <button>
+                  -
+                </button>
+                <input
+                  class="cart-item-quantity-input"
+                  type="number"
+                  value="1"
+                />
+                <button>
+                  +
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="cart-item"
+            name="Bowler"
+            type="hats"
+          >
+            <div
+              class="cart-item-img-container"
+            >
+              <img
+                alt="[object Object]"
+                class="cart-item-img"
+                src="bowler.jpg"
+              />
+            </div>
+            <div
+              class="cart-item-side"
+            >
+              <div
+                class="cart-item-info"
+              >
+                <div
+                  class="cart-item-name"
+                >
+                  Bowler
+                </div>
+                <div
+                  class="cart-item-price"
+                >
+                  $25.00
+                </div>
+              </div>
+              <div
+                class="cart-item-quantity-container"
+              >
+                <button>
+                  -
+                </button>
+                <input
+                  class="cart-item-quantity-input"
+                  type="number"
+                  value="3"
+                />
+                <button>
+                  +
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="cart-total"
+        >
+          Total: $
+          120.00
+        </div>
+        <button
+          class="checkout"
+        >
+          Checkout
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Test empty cart should open cart side drawer 1`] = `
+<div>
+  <div
+    class="top-bar"
+  >
+    <div
+      class="store-name"
+    >
+      Butter and Sugar
+    </div>
+    <div
+      class="shopping-cart"
+      data-testid="cart-button"
+    >
+      <div
+        class="cart-size"
+        data-testid="cart-size"
+      >
+        0
+      </div>
+      <img
+        alt="cart-icon"
+        class="cart-icon"
+        src="shopping-cart.png"
+      />
+    </div>
+    <div
+      class="cart-drawer open"
+    >
+      <div
+        class="cart-overlay"
+      />
+      <div
+        class="cart-container"
+      >
+        <div
+          class="cart-header"
+        >
+          <h2>
+            Your Shopping Cart
+          </h2>
+          <i
+            class="fa-solid fa-x"
+          />
+        </div>
+        <div
+          class="cart-items-container"
+        >
+          <div>
+            No items yet...
+          </div>
+        </div>
+        <div
+          class="cart-total"
+        >
+          Total: $
+          0.00
+        </div>
+        <button
+          class="checkout"
+        >
+          Checkout
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Test empty cart should show no items in cart 1`] = `
+<div>
+  <div
+    class="top-bar"
+  >
+    <div
+      class="store-name"
+    >
+      Butter and Sugar
+    </div>
+    <div
+      class="shopping-cart"
+      data-testid="cart-button"
+    >
+      <div
+        class="cart-size"
+        data-testid="cart-size"
+      >
+        0
+      </div>
+      <img
+        alt="cart-icon"
+        class="cart-icon"
+        src="shopping-cart.png"
+      />
+    </div>
+    <div
+      class="cart-drawer"
+    >
+      <div
+        class="cart-overlay"
+      />
+      <div
+        class="cart-container"
+      >
+        <div
+          class="cart-header"
+        >
+          <h2>
+            Your Shopping Cart
+          </h2>
+          <i
+            class="fa-solid fa-x"
+          />
+        </div>
+        <div
+          class="cart-items-container"
+        >
+          <div>
+            No items yet...
+          </div>
+        </div>
+        <div
+          class="cart-total"
+        >
+          Total: $
+          0.00
+        </div>
+        <button
+          class="checkout"
+        >
+          Checkout
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
