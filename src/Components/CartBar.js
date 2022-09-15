@@ -42,8 +42,8 @@ const CartBar = (
   <div className="top-bar">
     <div className='store-name'>Butter and Sugar</div>
 
-    <div className={`shopping-cart${cartStatus}`} onClick={toggleCart}>
-      {cartSize}
+    <div className={`shopping-cart${cartStatus}`} onClick={toggleCart} data-testid='cart-button'>
+      <div className='cart-size' data-testid='cart-size'>{cartSize}</div>
       <img alt="cart-icon" src={shoppingCart} className={`cart-icon${cartStatus}`}/>
     </div>
     <Cart 
