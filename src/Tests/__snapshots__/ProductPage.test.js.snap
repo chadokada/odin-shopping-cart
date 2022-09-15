@@ -1,0 +1,150 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`displays all products correctly 1`] = `
+<div>
+  <div
+    class="shop-container"
+  >
+    <div
+      class="shop-content"
+    >
+      <nav
+        class="nav"
+      >
+        <h2>
+          Hats
+        </h2>
+        <ul>
+          <a
+            href="/products/all"
+          >
+            <li>
+              All Products
+            </li>
+          </a>
+          <a
+            href="/products/hats"
+          >
+            <li>
+              Hats
+            </li>
+          </a>
+          <a
+            href="/products/bags"
+          >
+            <li>
+              Bags and Totes
+            </li>
+          </a>
+        </ul>
+      </nav>
+      <div
+        class="products-container"
+      >
+        <div
+          class="product-container"
+          name="Ribbed Beanie"
+          type="hats"
+        >
+          <div
+            class="product-img-container"
+          >
+            <img
+              alt="Ribbed Beanie"
+              class="product-img"
+              src="ribbed_beanie.jpg"
+            />
+          </div>
+          <div
+            class="product-info"
+          >
+            <div
+              class="product-name"
+            >
+              Ribbed Beanie
+            </div>
+            <div
+              class="price"
+            >
+              $20.50
+            </div>
+          </div>
+          <button
+            class="add-to-cart-btn"
+          >
+            Add To Cart
+          </button>
+        </div>
+        <div
+          class="product-container"
+          name="Bowler"
+          type="hats"
+        >
+          <div
+            class="product-img-container"
+          >
+            <img
+              alt="Bowler"
+              class="product-img"
+              src="bowler.jpg"
+            />
+          </div>
+          <div
+            class="product-info"
+          >
+            <div
+              class="product-name"
+            >
+              Bowler
+            </div>
+            <div
+              class="price"
+            >
+              $25.00
+            </div>
+          </div>
+          <button
+            class="add-to-cart-btn"
+          >
+            Add To Cart
+          </button>
+        </div>
+        <div
+          class="product-container"
+          name="Pink Princess Bowler"
+          type="hats"
+        >
+          <div
+            class="product-img-container"
+          >
+            <img
+              alt="Pink Princess Bowler"
+              class="product-img"
+              src="pink_bowler.png"
+            />
+          </div>
+          <div
+            class="product-info"
+          >
+            <div
+              class="product-name"
+            >
+              Pink Princess Bowler
+            </div>
+            <div
+              class="price"
+            >
+              $35.00
+            </div>
+          </div>
+          <button
+            class="add-to-cart-btn"
+          >
+            Add To Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
