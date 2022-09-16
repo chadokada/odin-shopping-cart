@@ -40,7 +40,7 @@ const CartBar = (
 
   return (
   <div className="top-bar">
-    <div className='store-name'>Butter and Sugar</div>
+    <div className='store-name' data-testid='store-name'>Butter and Sugar</div>
 
     <div className={`shopping-cart${cartStatus}`} onClick={toggleCart} data-testid='cart-button'>
       <div className='cart-size' data-testid='cart-size'>{cartSize}</div>
